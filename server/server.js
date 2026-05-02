@@ -4,7 +4,7 @@ const mongoose = require('mongoose');  // MongoDB object modeling
 const app = express();  // Create an Express application
 const PORT = process.env.PORT || 5000;  // Set server port from environment or default to 5000
 // Connect to MongoDB database
-mongoose.connect('mongodb+srv://osadarajapaksha13_db_user:JFu6imR3v0yXeLEr@ecom.sju3cgn.mongodb.net/').then(() => {
+mongoose.connect(process.env.CONNECTION_STRING).then(() => {
     console.log('Connected to MongoDB');  // Log successful connection
 }).catch((err) => {
     console.log('Error connecting to MongoDB', err);  // Log connection errors
